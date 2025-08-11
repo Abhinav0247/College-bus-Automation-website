@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Bus Information</title>
+    <link rel="stylesheet" href="/static/buslook.css">
+    <style>
+        
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #020845;
+            color: rgb(185, 162, 10);
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #040b83;
+        }
+        
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="admin" class="back-button">Back</a>
+        <h1>Bus Information</h1>
+        <div class="bus-info">
+            {% for bus in bus_data %}
+            <div class="bus">
+                <h2>Bus {{ bus[0] }}</h2>
+                <p><strong>Route:</strong> {{ bus[1] }}</p>
+                <p><strong>Fee Amount:</strong> ₹{{ bus[2] }}</p>
+                <p><strong>Timing:</strong> {{ bus[3] }}</p>
+                <p><strong>Driver Name:</strong> {{ bus[4] }}</p>
+                <p><strong>Contact Number:</strong> {{ bus[5] }}</p>
+                <!-- <a href="">Select this bus</a> -->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
